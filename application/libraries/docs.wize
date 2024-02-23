@@ -1,0 +1,11 @@
+Library biasanya dipakai untuk sepaket action terkait suatu layanan
+
+Misal untuk verifikasi pendaftaran ada sepaket metode pengiriman email konfirmasi dan lain sebagainya bisa dibuat librarynya
+
+Atau untuk function function yang butuh kode akses tertentu, misalnya nanti aplikasi melakukan consume/call api dari provider luar
+Biasanya ada api_key dan konfigurasi lainnya,
+Untuk method method yang perlu panggil api_key itu bisa dibuat di satu library yang sama.
+
+Atau metode penggunaan lain adalah ketika memerlukan payment gateway, dan sejenisnya
+
+Tapi selain itu, juga dibenarkan jika ingin membuat library pengolahan tanggal dan waktu, atau bahkan library khusus untuk functions functions yang diperlukan aplikasi juga diperkenankan

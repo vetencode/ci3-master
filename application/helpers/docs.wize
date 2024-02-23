@@ -1,0 +1,18 @@
+Note For You:
+Untuk buat helper gunakan format: filename_helper.php
+
+Normalya helper ini dipanggil di config/autoload.php line 92
+
+Tapi... untuk autoload.php diharapkan untuk request ke satu orang contohnya PIC
+Alasannya: Karena jika semua orang edit autoload.php maka dikhawatirkan ada konflik ketika merge di github-nya
+
+Maka dari itu untuk helper yang kemungkinan bisa dipakai oleh banyak orang, komunikasikan dengan PIC
+Tapi, kalau helper itu hanya akan digunakan khusus untuk fitur tertentu, maka panggil helper melalui syntax berikut di controller:
+
+$this->load->helper('yourhelpername'); example: date
+
+Best Practice Untuk Helper adalah digunakan untuk membuat functions yang banyak dipanggil,
+example: format rupiah, format ribuan, format nomor id (+62), format tanggal,
+
+dan klasifikasikan berdasarkan nama file, misal untuk formatter tanggal dan hal hal lain terkait tanggal, maka namakan helpernya: date_helper.php
+

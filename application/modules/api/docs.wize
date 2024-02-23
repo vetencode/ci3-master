@@ -1,0 +1,19 @@
+Secara Pribadi
+
+Sangat disarankan untuk membuat url endpoint api itu adalah sebuah nomina (kata benda)
+Misalnya untuk ambil data barang maka url direkomendasikan adalah
+https://yourdomain.com/api/barang
+
+Lalu sesuaikan sebuah action dengan http method-nya
+
+Misal untuk tambah gunakan POST,
+Untuk ambil data GET,
+Untuk update data secara banyak sekaligus (seperti hampir semua data di setiap kolom dalam satu row akan ditimpah) gunakan PUT,
+Untuk update data secara sedikit seperti update status atau sejenisnya, gunakan PATCH
+Untuk hapus data gunakan DELETE
+
+Jadi untuk satu set api dengan endpoint products bisa buat satu file di api/controllers/Products.php
+
+Dengan begitu tanpa atur route, url akan mudah dibaca dan konsisten
+
+Prinsip pembagian tugas dan tanggung jawab, bisa mempermudah dalam masalah debugging

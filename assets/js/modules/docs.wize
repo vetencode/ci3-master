@@ -1,0 +1,5 @@
+Sangat disarankan untuk membuat file file js dari berbgai modul itu simpan di sini
+
+Alasan utamanya adalah untuk caching, jadi setiap file .js yang dipanggil ini tidak akan dipanggil ulang jika browser masih mengingat yang sebelumnya
+
+Dengan begitu performance dari web akan cukup meningkat dibanding menyimpan script js di file yang sama dengan modulnya
