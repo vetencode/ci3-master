@@ -1,4 +1,5 @@
-<?php
+<?php defined('BASEPATH') or exit('No direct script access allowed.');
+
 
 /**
  * @param string $dateTime: date in format YYYY-mm-dd or YYYY-mm-d HH:ii:ss

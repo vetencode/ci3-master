@@ -1,0 +1,16 @@
+<?php
+defined('BASEPATH') or exit('No direct script access allowed');
+
+use chriskacerguis\RestServer\RestController;
+
+class {api_controller_name} extends RestController
+{
+	function __construct()
+	{
+		parent::__construct();
+	}
+
+	public function index_get()
+	{
+	}
+}

@@ -57,11 +57,13 @@ function getRequest($index)
 {
 	$ci = &get_instance();
 	if (isset($_SERVER['CONTENT_TYPE'])) {
-		if (strpos($_SERVER['CONTENT_TYPE'], 'application/x-www-form-urlencoded') !== false) {
+		$isFormUrlEncoded = strpos($_SERVER['CONTENT_TYPE'], 'application/x-www-form-urlencoded') !== false;
+		$isFormData = strpos($_SERVER['CONTENT_TYPE'], 'multipart/form-data') !== false;
+		if ($isFormUrlEncoded || $isFormData) {
 			if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-				return $ci->input->get($index);
+				return $ci->input->get($index, true);
 			} else {
-				return $ci->input->post($index);
+				return $ci->input->post($index, true);
 			}
 		}
 	}

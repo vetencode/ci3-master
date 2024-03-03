@@ -1,0 +1,87 @@
+Command list:
+
+###
+php wize create:env         : Membuat file .env dengan menyalin isi dari .env.example
+
+###
+php wize create:module [module_name]    : Membuat modul lengkap dengan seluruh direktori dan juga file-file controller model dan view templatenya
+    Params available:
+        --no-files          : Membuat modul dan folders tapi tidak dengan file contoh-nya
+        --no-controllers    : modul tanpa folder controllers default, tapi folder models dan views tetap dibuat
+        --no-models         : modul tanpa folder models default tapi folder controllers dan views tetap dibuat
+        --no-views          : modul tanpa folder views tapi folder controllers dan models tetap dibuat
+        --no-controller-file    : tidak akan buat file controllers default
+        --no-model-file         : tidak akan buat file models default
+        --no-view-file          : tidak akan buat file views default
+
+    GLOBAL PARAMS (Bisa dipakai di hampir semua command)
+        --template=default  : Bisa custom template sesuai keinginan asalkan file disimpan di directory wize_utils/templates/{template_name}/{file_option}.wize
+                              Misal kamu buat template dengan nama template 'custom'
+                                Maka jika ingin memanggil controller dengan template custom, maka kamu harus buat seperti berikut:
+                                wize_utils/templates/custom/controller.wize
+                                maka ketika memanggil:
+                                    php wize create:controller Products --template=custom
+                                Maka template yang kamu buat akan digunakan
+
+    *Note 'default' boleh diganti dengan yang lain. Yang penting file templatenya ada. Jika template tidak ada, otomatis akan gunakan yang default                           
+
+###
+php wize create:controller [controller_name]
+    Params Required
+        --module=module_name : Diperlukan tapi jika tidak ada, maka akan ada dialog yang bertanya
+    Params Optional
+        --template=default
+        -m                    : Otomatis buat model dengan nama 'M+controller_name'
+
+###
+php wize create:api_controller [api_controller_name]   : Create api controller
+        --template=default
+        -m              : Otomatis buatkan model dengan nama 'M + api_controller_name'
+
+###        
+php wize create:model [model_name]
+    Params Required
+        --module=module_name : Diperlukan tapi jika tidak ada, maka akan ada dialog yang bertanya
+    Params Optional
+        --template=default
+
+###
+php wize create:view [view_name]
+    Params Required
+        --module=module_name : Diperlukan tapi jika tidak ada, maka akan ada dialog yang bertanya
+    Params Optional
+        --template=default
+
+###
+php wize create:helper [helper_name]   : auto ditambahkan akhiran _helper
+    Params Optional
+        --template=default
+
+###
+php wize create:library [library_name]
+    Params Optional
+        --template=default
+
+
+!!! Important !!! (Boleh skip, tapi ada optimasi usage di sini)
+Di bawah ini (bagian create controller, model, dan view) ada parameter wajib yaitu --module
+    Tapi.. jika tidak disertakan maka akan ada dialog yang bertanya
+    
+    Opsi lain menyimpan nama modul adalah dengan menambah slash di awal
+    Example:
+        php wize create:controller home/test maka itu artinya buatkan controller Test di module home
+        jadi:
+        php wize create:controller|model|view {module_name}/[controller_name]
+            Note penting lagi, jika anda tetap menyertakan --module maka yang diawal akan dianggap sebagai folder 
+                Contoh:
+                php wize create:controller home/test --module=home
+                    Maka akan dibuatkan controller pada path: /modules/home/controllers/home/Test.php
+                                                              /modules/{--module}/controllers/directory/[controller_name]
+
+            Dan jika anda menyertakan lebih dari satu /
+            Maka formatnya akan jadi:
+                {module}/directory/directory/[controller_name]
+                tapi jika menyertakan --module
+                maka akan jadi:
+                directory/directory/directory/[controller_name] --module=yourmodule
+        Optimasi penggunaan, biasanya files untuk views itu dipisah pisah jika satu modul punya lebih dari 
