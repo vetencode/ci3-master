@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "86168c451d186940f3897277700f213f",
+    "content-hash": "91ac9453b14cfe99213f000aaf1c9dd9",
     "packages": [
         {
             "name": "chriskacerguis/codeigniter-restserver",
@@ -167,6 +167,61 @@
                 }
             ],
             "time": "2023-11-12T22:16:48+00:00"
+        },
+        {
+            "name": "midtrans/midtrans-php",
+            "version": "2.5.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Midtrans/midtrans-php.git",
+                "reference": "a1ad0c824449ca8c68c4cf11b3417ad518311d2b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Midtrans/midtrans-php/zipball/a1ad0c824449ca8c68c4cf11b3417ad518311d2b",
+                "reference": "a1ad0c824449ca8c68c4cf11b3417ad518311d2b",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "5.7.*",
+                "psy/psysh": "0.4.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Midtrans\\": "Midtrans/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andri Setiawan",
+                    "email": "andri.setiawan@veritrans.co.id"
+                },
+                {
+                    "name": "Alvin Litani",
+                    "email": "alvin.litani@veritrans.co.id"
+                },
+                {
+                    "name": "Ismail Faruqi",
+                    "email": "ismail.faruqi@veritrans.co.id"
+                }
+            ],
+            "description": "PHP Wrapper for Midtrans Payment API.",
+            "homepage": "https://midtrans.com",
+            "support": {
+                "issues": "https://github.com/Midtrans/midtrans-php/issues",
+                "source": "https://github.com/Midtrans/midtrans-php/tree/2.5.2"
+            },
+            "time": "2021-08-23T08:52:05+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -565,6 +620,46 @@
                 }
             ],
             "time": "2023-11-12T22:43:29+00:00"
+        },
+        {
+            "name": "wildanmzaki/midtrans-ci3",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/WildanMZaki/midtrans-ci3.git",
+                "reference": "841801c1fce8a456cae9d55a097077bfe23c29ac"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/WildanMZaki/midtrans-ci3/zipball/841801c1fce8a456cae9d55a097077bfe23c29ac",
+                "reference": "841801c1fce8a456cae9d55a097077bfe23c29ac",
+                "shasum": ""
+            },
+            "require": {
+                "midtrans/midtrans-php": "^2.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "WildanMZaki\\MidtransCI3\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "WildanMZaki",
+                    "email": "wildanmzaki7@gmail.com"
+                }
+            ],
+            "description": "This is extension package for using midtrans core api and snap easier",
+            "support": {
+                "issues": "https://github.com/WildanMZaki/midtrans-ci3/issues",
+                "source": "https://github.com/WildanMZaki/midtrans-ci3/tree/v1.0.3"
+            },
+            "time": "2024-05-14T06:52:40+00:00"
         }
     ],
     "packages-dev": [],
@@ -575,5 +670,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }
