@@ -865,11 +865,9 @@ class CI_Session {
 	{
 		if (isset($key))
 		{
-			$result = (isset($_SESSION['__ci_vars'], $_SESSION['__ci_vars'][$key], $_SESSION[$key]) && ! is_int($_SESSION['__ci_vars'][$key]))
+			return (isset($_SESSION['__ci_vars'], $_SESSION['__ci_vars'][$key], $_SESSION[$key]) && ! is_int($_SESSION['__ci_vars'][$key]))
 				? $_SESSION[$key]
 				: NULL;
-			unset($_SESSION[$key]);
-            return $result;
 		}
 
 		$flashdata = array();
@@ -881,8 +879,7 @@ class CI_Session {
 				is_int($value) OR $flashdata[$key] = $_SESSION[$key];
 			}
 		}
-		
-        unset($_SESSION[$key]);
+
 		return $flashdata;
 	}
 
