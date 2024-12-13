@@ -16,10 +16,5 @@
         }
     ],
     "minimum-stability": "dev",
-    "prefer-stable": true,
-    "autoload": {
-        "psr-4": {
-            "WildanMZaki\\Wize\\Extend\\": "wize.extend/"
-        }
-    }
+    "prefer-stable": true
 }
